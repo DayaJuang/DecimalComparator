@@ -12,13 +12,14 @@ public class Main {
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
         double ans1, ans2;
+        int scale = 3;
 
         BigDecimal bd = new BigDecimal(Double.toString(num1));
-        bd = bd.setScale(3, RoundingMode.DOWN);
+        bd = bd.setScale(scale, RoundingMode.DOWN);
         ans1 = bd.doubleValue();
 
         bd = new BigDecimal(Double.toString(num2));
-        bd = bd.setScale(3,RoundingMode.DOWN);
+        bd = bd.setScale(scale,RoundingMode.DOWN);
         ans2 = bd.doubleValue();
 
         return (ans1 == ans2);
